@@ -1,0 +1,32 @@
+<h1>Route Planning</h1>
+
+<mat-card *ngIf="error">
+  <mat-card-header>
+    <mat-card-title>Error</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ error }}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="!error">
+  <mat-card-header>
+    <mat-card-title>Optimal Route</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let waypoint of optimalRoute">
+        Waypoint: {{ waypoint.waypoint }} - Condition: {{ waypoint.condition }}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="!error">
+  <mat-card-header>
+    <mat-card-title>Risk Assessment</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ riskAssessment }}</p>
+  </mat-card-content>
+</mat-card>
